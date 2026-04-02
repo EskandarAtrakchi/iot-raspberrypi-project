@@ -10,9 +10,10 @@ history = []
 def on_message(client, userdata, msg):
     global temps, humidity, light, history
 
+    #not sure if this works 
     data = json.loads(msg.payload.decode())
     print("Received:", data)
-
+    
     temps.append(data["temp"])
     humidity.append(data["humidity"])
     light.append(data["light"])
@@ -44,7 +45,7 @@ def on_message(client, userdata, msg):
     plt.plot(light)
 
     plt.pause(0.1)
-
+#MQTT connection 
 client = mqtt.Client()
 client.connect("test.mosquitto.org", 1883, 60)
 
