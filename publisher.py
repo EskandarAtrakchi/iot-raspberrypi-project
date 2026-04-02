@@ -10,7 +10,7 @@ history = []
 
 def on_message(client, userdata, msg):
     global temps, humidity, light, history
-
+    # test if this work 
     data = json.loads(msg.payload.decode())
     print("Received:", data)
 
