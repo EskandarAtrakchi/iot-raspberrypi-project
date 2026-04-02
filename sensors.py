@@ -1,5 +1,6 @@
 import random
 
+#data will be just randomly generated
 def getTemp():
     return round(random.uniform(20, 30), 2)
 
